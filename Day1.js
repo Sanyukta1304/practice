@@ -39,7 +39,7 @@ console.log("Is JavaScript fun?", isJavaScriptFun);
 
 //null 
 let emptyValue = null;
-var undefinedValue;
+
 console.log( emptyValue);
 console.log(typeof undefinedValue);
 

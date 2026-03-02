@@ -26,22 +26,21 @@ console.log(car["model"]);
 console.log(car);
 
 //functions
-function greet(){  //function is a data type that can be called to perform a specific task.
-   console.log(`Hello, welcome to JavaScript!`);
-}   
-greet(); //calling the function
-
 //type of function
 function greet() {
     console.log(`Hello, welcome to JavaScript!`);
 }
-
 console.log(typeof greet); //function is a data type in JavaScript
+
 
 //variable that holds a function expression
 var func = function greet() {
     console.log(`Hello, welcome to JavaScript!`);
 }
-
 console.log(func()); //calling the function expression
  
+
+function greet(){  //function is a data type that can be called to perform a specific task.
+   console.log(` welcome to JavaScript!`);
+}   
+greet(); //calling the function

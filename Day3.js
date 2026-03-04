@@ -43,6 +43,7 @@ var add=(a,b)=>{
 }           
 console.log(add(5,10));
 
+
 ///function wtre ananonymious function-assinment 
 
 

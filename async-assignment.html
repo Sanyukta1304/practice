@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Async JavaScript Assignment</title>
+</head>
+<body>
+
+<h2>Asynchronous JavaScript Demo</h2>
+<p>Open the console (Press F12 → Console) to see the output.</p>
+
+<script>
+
+// ----------------------------------------------------
+// Function to simulate user login using a CALLBACK
+// ----------------------------------------------------
+function loginUser(username, password, callback) {
+
+    // Display message that login process has started
+    console.log("Checking user credentials...");
+
+    // setTimeout simulates delay like checking a database/server
+    setTimeout(function() {
+
+        // Check username and password
+        if (username === "admin" && password === "1234") {
+
+            console.log("Login successful!");
+
+            // If login is successful, execute the callback function
+            callback();
+
+        } else {
+
+            console.log("Login failed. Invalid credentials.");
+
+        }
+
+    }, 2000); // 2 seconds delay
+
+}
+
+
+// ----------------------------------------------------
+// Function that represents opening the dashboard
+// ----------------------------------------------------
+function openDashboard() {
+
+    console.log("Opening Dashboard...");
+
+    // After dashboard opens, fetch API data
+    loadDashboardData();
+
+}
+
+
+// ----------------------------------------------------
+// Async function to fetch data from external API
+// ----------------------------------------------------
+async function loadDashboardData() {
+
+    try {
+
+        console.log("Fetching posts from API...");
+
+        // Fetch data from JSONPlaceholder API
+        let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+
+        // Convert response into JSON format
+        let data = await response.json();
+
+        console.log("Posts fetched from API:");
+
+        // Display first 5 post titles
+        data.slice(0,5).forEach(function(post) {
+            console.log(post.title);
+        });
+
+    } catch(error) {
+
+        // Error handling
+        console.log("Error fetching data:", error);
+
+    }
+
+}
+
+
+// ----------------------------------------------------
+// Start the program
+// ----------------------------------------------------
+
+// Call login function
+// If login succeeds → dashboard opens → API data loads
+loginUser("admin", "1234", openDashboard);
+
+</script>
+
+</body>
+</html>

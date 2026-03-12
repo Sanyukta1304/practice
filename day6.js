@@ -10,3 +10,8 @@
 // For example, if you want to test a piece of code without running a certain line, you can comment it out like this:
 // console.log("This line is commented out and will not run");      
 // Remember to use comments wisely and keep them clear and concise to improve the readability of your code  
+
+
+import { hello } from './date12_module.js';
+hello();
+

@@ -15,3 +15,36 @@ export function hello() {
 // hello();       
 // Remember to use the correct path to the module file when importing, and to include the .js extension if necessary
 
+//script linking will be done in the end 
+//so in script we export the index.js file and then in index.js we will import the date12_module.js file and use the hello function to test if it works correctly       
+ 
+
+//example dom 
+ <script>
+
+        //1️⃣ CLICK EVENT
+        
+        document.getElementById("clickBtn").addEventListener("click", function() {
+           document.getElementById("clickText").innerText = "Button was clicked!";
+        });
+
+        // 2️⃣ MOUSEOVER & MOUSEOUT EVENT
+        let box = document.getElementById("hoverBox");
+
+        box.addEventListener("mouseover", function() {
+            box.style.backgroundColor = "#ffd54f";
+            box.innerText = "Mouse is Over Me!";
+        });
+
+        box.addEventListener("mouseout", function() {
+            box.style.backgroundColor = "#e3f2fd";
+            box.innerText = "Hover Over Me";
+        });
+
+        // 3️⃣ KEYDOWN EVENT
+        document.getElementById("keyInput").addEventListener("keydown", function(event) {
+            document.getElementById("keyText").innerText =
+                "You pressed: " + event.key;
+        });
+
+    </script>

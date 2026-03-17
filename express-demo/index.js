@@ -1,7 +1,18 @@
 const express = require('express');
 const app = express();
 
+//database con 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/myapp', { useNewUrlParser: true, useUnifiedTopology: true }); 
+
+const userSchema = new mongoose.Schema({
+  name: String,
+  age: Number
+});
+const userModel = mongoose.model('User', userSchema);
+
 app.get('/', (req, res) => {
+  console.log(req.query); // Log the query parameters
   res.send('Hello, World!');
 });
 

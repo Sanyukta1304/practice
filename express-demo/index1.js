@@ -14,15 +14,15 @@ const userModel = mongoose.model('User', userSchema);
 //create a new user document and save it to the database
 const user1 = new userModel({ name: 'Alice', age: 30 });
 
-//app.get('/', (req, res) => {
-  //console.log(req.query); // Log the query parameters
-  //res.send('Hello, World!');
-//});
+app.get('/', (req, res) => {
+console.log(req.query); // Log the query parameters
+res.send('Hello, World!');
+});
 
 //start the server
-//app.listen(3000, () => {
- // console.log('Server is running on port 3000');
-//}); 
+app.listen(3000, () => {
+ console.log('Server is running on port 3000');
+}); 
 
 //http is a built-in module in Node.js that allows you to create an HTTP server.
 //In this code, we are using the Express framework to create a web server that listens 

@@ -82,3 +82,8 @@ export default FirstComp;
 7. export default FirstComp
    - Makes this component usable in other files
 */
+
+
+import { useState } from "react";
+
+fun
